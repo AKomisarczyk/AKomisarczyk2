@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Student</title>
+</head>
+<body>
+    <h1>Add Student</h1>
+    <form action="/add-student" method="post">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" required>
+        <br>
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" required>
+        <br>
+        <label for="studentId">Student ID:</label>
+        <input type="text" id="studentId" name="studentId" required>
+        <br>
+        <label for="major">Major:</label>
+        <input type="text" id="major" name="major" required>
+        <br>
+        <button type="submit">Add Student</button>
+    </form>
+    <a href="/home">Home</a>
+    <a href="/student">Student</a>
+    <a href="/users">Users</a>
+</body>
+</html>
