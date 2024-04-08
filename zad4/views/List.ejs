@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include partials/head.ejs %>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= pageTitle %></title>
+</head>
+<body>
+    <% include partials/navigation.ejs %>
+    <h1>List of Students</h1>
+    <ul>
+        <% students.forEach(function(student) { %>
+            <li>
+                <p>Full Name: <%= student.fullName %></p>
+                <p>Code: <%= student.code %></p>
+                <p>Field of Studies: <%= student.fieldOfStudies %></p>
+            </li>
+        <% }); %>
+    </ul>
+</body>
+</html>
