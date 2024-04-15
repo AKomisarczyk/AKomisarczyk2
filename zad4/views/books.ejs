@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books</title>
+</head>
+<body>
+    <h1>Books</h1>
+    <%- include('partials/navigation') %>
+    <% if (books.length === 0) { %>
+        <p>No books has been found</p>
+    <% } else { %>
+        <ul>
+            <% books.forEach(book => { %>
+                <li><%= book.title %> - <%= book.publishingYear %> 
+                    <a href="/book/<%= book.id %>">Details</a>
+                </li>
+            <% }); %>
+        </ul>
+    <% } %>
+
+    <script>
+        function deleteBook(bookId) {
+            if (confirm("Na pewno chcesz usunąć tę książkę")) {
+                fetch(`/book/delete/${bookId}`, {
+                    method: 'DELETE'
+                })
+                .then(response => {
+                    if (response.ok) {
+                        window.location.reload();
+                    } else {
+                        alert("Nie udało się usunąć książki");
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+            }
+        }
+    </script>
+</body>
+</html>
